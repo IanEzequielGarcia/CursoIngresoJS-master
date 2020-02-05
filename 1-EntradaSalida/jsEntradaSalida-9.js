@@ -8,8 +8,9 @@ function mostrarAumento()
     var porcentaje;
     var resultado;
     primerNumero=document.getElementById("sueldo").value;
-    parseInt(primerNumero);
+    primerNumero=parseInt(primerNumero);
     resultado=parseInt(resultado);
-    resultado=(primerNumero*10)/100+primerNumero;
+    porcentaje=primerNumero*10/100;
+    resultado=primerNumero+porcentaje
     document.getElementById("resultado").value=resultado;
 }
