@@ -7,10 +7,17 @@ function mostrarAumento()
     var importe;
     var descuento;
     var resultado;
+    var descuentoVar;
+
     importe=document.getElementById("importe").value;
     importe=parseInt(importe);
-    descuento=importe*25/100;
+
+    descuentoVar=prompt("ingrese un descuento")
+    descuentoVar=parseInt(descuentoVar)
+
+    descuento=importe*descuentoVar/100;
     resultado=importe-descuento;
+    
     document.getElementById("resultado").value=resultado
     
 }
