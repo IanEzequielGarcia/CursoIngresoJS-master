@@ -4,6 +4,6 @@ function mostrar()
 {
     var ID;
     ID=document.getElementById("elNombre").value;
-    alert(ID);
+    alert("Te llamas "+ID);
 }
 
