@@ -28,5 +28,11 @@ function Circulo ()
 }
 function Materiales () 
 {
-	
+    var largo,ancho;
+    largo=document.getElementById("Largo").value;
+    largo=parseInt(largo)
+    largo=console.log("Se vana a necesitar "+largo*2+"Kg de cemento")
+    ancho=document.getElementById("Ancho").value;
+    ancho=parseInt(ancho)
+    largo=console.log("Se vana a necesitar "+ancho*3+"Kg de cemento")
 }
