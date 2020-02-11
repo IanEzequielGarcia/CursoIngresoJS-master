@@ -10,5 +10,123 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+    var precio=parseInt(precio=35);
+    var cantidad;
+    var precioConDescuento;
+    var porcentajeDescuento;
+    var marca;
+
+    cantidad=document.getElementById("Cantidad").value;
+    cantidad=parseInt(cantidad)
+    marca=document.getElementById("Marca").value;
+    if(cantidad>=6)
+    {
+        porcentajeDescuento=precio*50/100;
+        parseInt(porcentajeDescuento);
+        precio=precio*cantidad
+        parseInt(precio);
+        precioConDescuento=precio-porcentajeDescuento;
+        parseInt(precioConDescuento)
+        document.getElementById("precioDescuento").value=precioConDescuento
+
+    }
+    else
+    {
+        if(cantidad==5)
+        {
+            if(marca=="ArgentinaLuz")
+            {
+                porcentajeDescuento=precio*40/100;
+                parseInt(porcentajeDescuento);
+                precio=precio*cantidad
+                parseInt(precio);
+                precioConDescuento=precio-porcentajeDescuento;
+                parseInt(precioConDescuento)
+                document.getElementById("precioDescuento").value=precioConDescuento
+            }
+            else
+            {
+                porcentajeDescuento=precio*30/100;
+                parseInt(porcentajeDescuento);
+                precio=precio*cantidad
+                parseInt(precio);
+                precioConDescuento=precio-porcentajeDescuento;
+                parseInt(precioConDescuento)
+                document.getElementById("precioDescuento").value=precioConDescuento
+            }
+        }// if cantidad 5
+        if(cantidad==4)
+        {
+            if(marca=="ArgentinaLuz"||marca=="FelipeLamparas")
+            {
+                porcentajeDescuento=precio*25/100;
+                parseInt(porcentajeDescuento);
+                precio=precio*cantidad
+                parseInt(precio);
+                precioConDescuento=precio-porcentajeDescuento;
+                parseInt(precioConDescuento)
+                document.getElementById("precioDescuento").value=precioConDescuento
+            }
+            else
+            {
+                porcentajeDescuento=precio*20/100;
+                parseInt(porcentajeDescuento);
+                precio=precio*cantidad
+                parseInt(precio);
+                precioConDescuento=precio-porcentajeDescuento;
+                parseInt(precioConDescuento)
+                document.getElementById("precioDescuento").value=precioConDescuento
+            }
+        }// cantidad 4
+        if(cantidad==3)
+        {
+            if(marca=="ArgentinaLuz")
+            {
+                porcentajeDescuento=precio*15/100;
+                parseInt(porcentajeDescuento);
+                precio=precio*cantidad
+                parseInt(precio);
+                precioConDescuento=precio-porcentajeDescuento;
+                parseInt(precioConDescuento)
+                document.getElementById("precioDescuento").value=precioConDescuento
+            }
+            if(marca=="FelipeLamparas")
+            {
+                porcentajeDescuento=precio*10/100;
+                parseInt(porcentajeDescuento);
+                precio=precio*cantidad
+                parseInt(precio);
+                precioConDescuento=precio-porcentajeDescuento;
+                parseInt(precioConDescuento)
+                document.getElementById("precioDescuento").value=precioConDescuento
+            }
+            if(marca!="ArgentinaLuz"&& marca!="FelipeLamparas")
+            {
+                porcentajeDescuento=precio*5/100;
+                parseInt(porcentajeDescuento);
+                precio=precio*cantidad
+                parseInt(precio);
+                precioConDescuento=precio-porcentajeDescuento;
+                parseInt(precioConDescuento)
+                document.getElementById("precioDescuento").value=precioConDescuento
+            }   
+        }
+        else
+        {
+            precio=precio*cantidad
+            parseInt(precio);
+            document.getElementById("precioDescuento").value=precio
+        }
+    }//Else cantidades
+    if(precioConDescuento>119)
+    {
+        precio=precio*cantidad
+        porcentajeDescuento=precio*10/100;
+        parseInt(porcentajeDescuento);
+        precioConDescuento=precio+porcentajeDescuento;
+        parseInt(precioConDescuento)
+        document.getElementById("precioDescuento").value=precioConDescuento
+        alert("Usted pago "+precioConDescuento)
+    }
+
 }
