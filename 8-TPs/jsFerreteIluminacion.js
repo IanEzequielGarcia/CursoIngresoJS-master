@@ -11,7 +11,7 @@ function CalcularPrecio ()
 {
     var precio;
     var cantidad;
-    var precioConDescuento;
+    var precioFinal;
     var porcentajeDescuento;
     var marca;
     var porcentaje;
@@ -25,7 +25,7 @@ function CalcularPrecio ()
     cantidad=parseInt(cantidad);
     parseInt(porcentajeDescuento);
     parseInt(precio);
-    parseInt(precioConDescuento);
+    parseInt(precioFinal);
 
     precio=precio*cantidad;
 
@@ -76,11 +76,10 @@ function CalcularPrecio ()
     if(precio>119)
     {
         porcentaje=10;
+        precioFinal=precio+porcentajeDescuento;
         alert("IIBB Usted pago "+porcentajeDescuento+" de impuestos");
-        precioConDescuento=precio+porcentajeDescuento;
     }
     porcentajeDescuento=precio*porcentaje/100;
-    precioConDescuento=precio-porcentajeDescuento;
-    document.getElementById("precioDescuento").value=precioConDescuento
-    
+    precioFinal=precio-porcentajeDescuento;
+    document.getElementById("precioDescuento").value=precioFinal
 }
