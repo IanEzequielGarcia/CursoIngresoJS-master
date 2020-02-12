@@ -3,7 +3,7 @@ function mostrar()
 	//Genero el número RANDOM entre 1 y 10 
 	var numRandom;
 	numRandom=Math.floor(Math.random() * 10) + 1;
-	if(numRandom>9)
+	if(numRandom>8)
 	{
 		console.log("Excelente");
 	}
