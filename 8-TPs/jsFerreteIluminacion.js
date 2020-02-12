@@ -126,7 +126,7 @@ function CalcularPrecio ()
         precioConDescuento=precio+porcentajeDescuento;
         parseInt(precioConDescuento)
         document.getElementById("precioDescuento").value=precioConDescuento
-        alert("Usted pago "+precioConDescuento)
+        alert("Usted pago "+porcentajeDescuento+" de impuestos")
     }
 
 }
