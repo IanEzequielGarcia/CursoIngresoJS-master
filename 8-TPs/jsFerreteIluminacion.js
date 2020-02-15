@@ -15,11 +15,13 @@ function CalcularPrecio ()
     var porcentajeDescuento;
     var marca;
     var porcentaje;
+    var impuesto;
 
     cantidad=document.getElementById("Cantidad").value;
     marca=document.getElementById("Marca").value;
 
     porcentaje=0;
+    porcentajeImpuestos=0;
     precio=35
     precio=parseInt(precio);
     cantidad=parseInt(cantidad);
@@ -73,13 +75,16 @@ function CalcularPrecio ()
             }   
         }
     }//Else cantidades
-    if(precio>119)
-    {
-        porcentaje=10;
-        precioFinal=precio+porcentajeDescuento;
-        alert("IIBB Usted pago "+porcentajeDescuento+" de impuestos");
-    }
     porcentajeDescuento=precio*porcentaje/100;
     precioFinal=precio-porcentajeDescuento;
     document.getElementById("precioDescuento").value=precioFinal
+    if(precioFinal>119)
+    {
+    porcentaje=10;
+    porcentajeDescuento=precioFinal*porcentaje/100;
+    precioFinal+=porcentajeDescuento;
+    document.getElementById("precioDescuento").value=precioFinal
+    alert("IIBB Usted pago "+porcentajeDescuento+" de impuestos");
+    }
+
 }
