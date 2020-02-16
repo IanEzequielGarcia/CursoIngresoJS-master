@@ -10,19 +10,80 @@ Desde  6 Intentos hasta 10:”falta técnica”
 Más de 10 intentos: “afortunado en el amor!!”.*/
 
 var numeroSecreto; 
-var contadorIntentos;
-
+var contadorIntentos=0;
+var numero;
 function comenzar()
 {
 	//Genero el número RANDOM entre 1 y 100
-	 
-	
+	numeroSecreto=numRandom=Math.floor(Math.random() * 100) + 1;
 
 }
 
 function verificar()
 {
-	
-	
+	numero=document.getElementById("numero").value;
 
+	if(numeroSecreto>numero)
+	{
+		alert("Falta")
+		contadorIntentos+=1
+	}
+	else
+	{
+		if(numeroSecreto<numero)
+		{
+			alert("Te pasaste")
+		}
+		else
+		{
+			if (contadorIntentos==1)
+			{
+				alert("Usted es un Psiquico")
+			}
+			else
+			{
+				if (contadorIntentos==2)
+				{
+					alert("Usted tiene percepcion")
+				}
+				else
+				{
+					if (contadorIntentos==3)
+					{
+						alert("esto es suerte")
+					}
+					else
+					{
+						if (contadorIntentos==4)
+						{
+							alert("excelente tecnica")
+						}
+						else
+						{
+							if (contadorIntentos==5)
+								{
+									alert("esta en la media")
+								}
+							else
+							{
+								if (contadorIntentos>5 && contadorIntentos<10)
+								{
+									alert("falta tecnica")
+								}
+								else
+								{
+									alert("afortunado en el amor")
+								}
+
+
+							}
+						}
+					}
+				}	
+			}
+		}
+		contadorIntentos+=1
+	}
+
+	document.getElementById("intentos").value=contadorIntentos
 }
