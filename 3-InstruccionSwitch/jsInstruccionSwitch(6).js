@@ -11,7 +11,7 @@ function mostrar()
         case 9:
         case 10:
         case 11:
-            console.info("Es de mañana",laHora+ "horas");
+            console.info("Es de mañana",laHora+" horas");
             break;
         case 12:
         case 13:
@@ -34,10 +34,10 @@ function mostrar()
         case 4:
         case 5:
         case 6:
-            console.info("Es de noche",laHora+ "horas");
+            console.info("Es de noche",laHora+" horas");
             break;
         default:
-            console.info("Esa hora no existe",laHora+ "horas");
+            console.info("Esa hora no existe");
             break;
     }
 
