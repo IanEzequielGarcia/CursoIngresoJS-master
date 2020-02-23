@@ -9,5 +9,80 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
  */
 function ComenzarIngreso () 
 {
- 
+    var datos,edad, sexo, estadoCivil, sueldoBruto, numeroL, nacionalidad;
+    datos = 1;
+
+    while(datos==1)
+    { 
+        edad=prompt("Ingrese su edad");
+        edad=parseInt(edad)
+        if(edad>17 && edad<91)
+        {
+            sexo=prompt("Ingrese su sexo");
+            estadoCivil=prompt("Indique su estado civil (soltero/casado/casado/viudo)")
+            switch(estadoCivil)
+            {
+                case "soltero":
+                    estadoCivil=1;
+                    break;
+                case "casado":
+                    estadoCivil=2;
+                    break;
+                case "divorciado":
+                    estadoCivil=3;
+                    break;
+                case "viudo":
+                    estadoCivil=4;
+                    break;
+                default:
+                    alert("Estado civil no valido");
+                    datos=0;
+                    estadoCivil="Invalido"
+            break;
+            }
+            sueldoBruto=prompt("Ingrese su sueldo bruto")
+            if(sueldoBruto<7999)
+            {
+                alert("Por debajo del minimo");
+                sueldoBruto="Invalido";
+                datos=0
+            }
+            else
+            {
+                numeroL=prompt("Ingrese su numero de legajo");
+                parseInt(numeroL);
+                if(numeroL<999 || numeroL>9999)
+                {
+                    alert("Numero de legajo invalido");
+                    numeroL="Invalido";
+                    datos=0;
+                }
+                else
+                {
+                    nacionalidad=prompt("Ingrese su nationalidad(“A” para argentinos, “E” para extranjeros, “N” para nacionalizados.)");
+                    if (nacionalidad=="A"||nacionalidad=="E"||nacionalidad=="N")
+                    {
+                        datos=0;
+                    }
+                    else
+                    {
+                        alert("Nacionalidad incorrecta");
+                        nacionalidad="Incorrecto"
+                        datos=0
+                    }
+                }
+            }
+        }
+        else
+        {
+            alert("Edad no valida para continuar");
+        }
+        datos=0;
+    }
+    document.getElementById("Edad").value=edad;
+    document.getElementById("Sexo").value=sexo;
+    document.getElementById("EstadoCivil").value=estadoCivil;
+    document.getElementById("Sueldo").value=sueldoBruto;
+    document.getElementById("Legajo").value=numeroL;
+    document.getElementById("Nacionalidad").value=nacionalidad;
 }
