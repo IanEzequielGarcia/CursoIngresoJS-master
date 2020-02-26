@@ -18,7 +18,24 @@ function ComenzarIngreso ()
         edad=parseInt(edad)
         if(edad>17 && edad<91)
         {
-            sexo=prompt("Ingrese su sexo");
+            sexo=prompt("Ingrese su sexo (F Ó M)");
+            if(sexo=="F")
+            {
+            sexo="F";
+            }
+            else
+            {
+                if(sexo=="M")
+                {
+                    sexo="M";
+                }
+                else
+                {
+                    sexo="Invalido";
+                    datos=0;
+                    break;
+                }
+            }
             estadoCivil=prompt("Indique su estado civil (soltero/casado/casado/viudo)")
             switch(estadoCivil)
             {
@@ -40,12 +57,13 @@ function ComenzarIngreso ()
                     estadoCivil="Invalido"
             break;
             }
-            sueldoBruto=prompt("Ingrese su sueldo bruto")
-            if(sueldoBruto<7999)
+            sueldoBruto=prompt("Ingrese su sueldo bruto");
+            sueldoBruto=parseInt(sueldoBruto);
+            if(sueldoBruto<7999||isNaN(sueldoBruto))
             {
-                alert("Por debajo del minimo");
+                alert("Por debajo del minimo o invalido");
                 sueldoBruto="Invalido";
-                datos=0
+                datos=0;
             }
             else
             {

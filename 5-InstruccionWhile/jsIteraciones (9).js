@@ -2,9 +2,10 @@ function mostrar()
 {
 
 	var contador=0;
+	var contadorPares;
 	var maximo;
 	var minimo;
-
+	var numeroIngresado;
 	// declarar variables
 		
 	var respuesta='si';
@@ -12,25 +13,29 @@ function mostrar()
 	while(respuesta!='no')
 	{
 		contador++;
-		numeroIngresado=prompt("ingrese numero");
+		numeroIngresado=prompt("ingrese numero menor a 10 y mayor que 0");
 		numeroIngresado=parseInt(numeroIngresado);
-		if(contador==1)
+		while(isNaN(numeroIngresado) || numeroIngresado>0 || numeroIngresado>10)
 		{
-			maximo=numeroIngresado;
-			minimo=numeroIngresado;
+			numeroIngresado=prompt("Error, intentelo de nuevo");
+			numeroIngresado=parseInt(numeroIngresado);
 		}
-		else
+
+		contador=acumulador+numeroIngresado
+		if(numeroIngresado%2==0)
 		{
-			if(numeroIngresado>maximo)
+			contadorPares++;
+		}
+		/*
+			if(numeroIngresado>maximo || contador==1)
 			{
 				maximo=numeroIngresado;
 			}
-			if(numeroIngresado<minimo)
+			if(numeroIngresado<minimo || contador==1)
 			{
-				minimo=numeroIngresado;
-			}
-		}
+
 		respuesta=prompt("ingrese `no`para salir");
+		*/
 	}
 
 	document.getElementById("maximo").value=maximo
