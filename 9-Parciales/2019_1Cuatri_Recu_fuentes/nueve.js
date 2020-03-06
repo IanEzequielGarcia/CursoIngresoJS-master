@@ -1,12 +1,11 @@
 function mostrar()
 {
     var nombre,edad,notaFinal,respuesta;
-    var varonesAprobados,promedioMenores,promedioAdolescentes,promedioMayores,adolescentes,mayores,bandera;
+    var varonesAprobados,promedioMenores,promedioAdolescentes,promedioMayores;
     var mujeresAprobadas,contadorAdolescente,contadorMayores,contadorMenores,promedioVarones,promedioMujeres;
     var banderaVaron,banderaMujer,banderaMenor,banderaMayor,banderaAdolescente;
 
     respuesta="s"
-    bandera=0;
     varonesAprobados=0;
     mujeresAprobadas=0;
     contadorAdolescente=0;
@@ -17,6 +16,8 @@ function mostrar()
     banderaMayor=0;
     banderaVaron=0;
     banderaMenor=0;
+    promedioVarones=0;
+    promedioMujeres=0;
 
     while(respuesta=="s")
     {
@@ -44,29 +45,44 @@ function mostrar()
             notaFinal=prompt("Ingrese su notaFinal");
             notaFinal=parseInt(notaFinal);
         }
-        if(sexo=="m" && notaFinal>3)
+        if(notaFinal>3)
         {
-            varonesAprobados++;
-            promedioVarones=+notaFinal;
-            banderaVaron++;
-        }
-        if(sexo=="f" && notaFinal>3)
-        {
-            mujeresAprobadas++;
-            promedioMujeres=+notaFinal;
-            banderaMujer++;
-        }
-        if(edad<18)
-        {
-            contadorMenores=contadorMenores+notaFinal;
-            banderaMenor++;
+           
+            if(sexo=="m")
+            {
+                varonesAprobados++;
+                promedioVarones=promedioVarones+notaFinal;
+                banderaVaron++;
+            }
+            else
+            {
+                mujeresAprobadas++;
+                promedioMujeres=promedioMujeres+notaFinal;
+                banderaMujer++;
+            }
         }
         else
         {
-            if(edad<16 && edad>11)
+            if(sexo=="m")
             {
-                contadorAdolescente=contadorAdolescente+notaFinal;
-                contadorAdolescente++;
+                promedioVarones=promedioVarones+notaFinal;
+            }
+            else
+            {
+                promedioMujeres=promedioMujeres+notaFinal;
+            }
+        }
+        if(edad<16 && edad>11)
+        {
+            contadorAdolescente=contadorAdolescente+notaFinal;
+            banderaAdolescente++;
+        }
+        else
+        {
+            if(18>edad)
+            {
+                contadorMenores=contadorMenores+notaFinal;
+                banderaMenor++;
             }
             else
             {
@@ -77,16 +93,18 @@ function mostrar()
 
         respuesta=prompt("Quiere seguir cargando datos?s/n")
     }
-        promedioMenores=contadorMenores/bandera;
-        promedioAdolescentes=contadorAdolescente/bandera;
-        promedioMayores=contadorMayores/bandera;
-        promedioVarones=promedioVarones/bandera;
-        promedioMujeres=promedioMujeres/bandera;
+        promedioMenores=contadorMenores/banderaMenor;
+        promedioAdolescentes=contadorAdolescente/banderaAdolescente;
+        promedioMayores=contadorMayores/banderaMayor;
+        promedioVarones=promedioVarones/banderaVaron;
+        promedioMujeres=promedioMujeres/banderaMujer;
         
         document.write("<br>PromedioMenores "+promedioMenores);
         document.write("<br>PromedioAdolescentes "+promedioAdolescentes);
         document.write("<br>PromedioMayores "+promedioMayores);
         document.write("<br>PromedioVarones "+promedioVarones);
         document.write("<br>PromedioMujeres "+promedioMujeres);
+        document.write("<br>VaronesAprobados "+varonesAprobados);
+        document.write("<br>MujeresAprobadas "+mujeresAprobadas);
 
 }       
